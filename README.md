@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
 
+# Create mock backend
+
+1.	json-server installation
+Run `npm install -g json-server` to install json-server
+2. create a JSON file with the mock data in the root folder (here its `learn-programming/courses.json`)
+3. Run mock server 
+    Run `json-server --watch courses.json` to run the mock server.
+    Navigate to `http://localhost:3000/` to check the json-server is running
+    Navigate to `http://localhost:3000/lessons` to check the results
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
