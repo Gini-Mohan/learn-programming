@@ -33,10 +33,6 @@ $table-header-border: #1565c0;
 $font-secondary: #d9d9d9;
 $row-bg: #f4f2f1;
 
-// div {
-//   box-sizing: border-box;
-// }
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -54,8 +50,6 @@ color:$font-secondary;
 background-color: #1976d2;
 cursor: pointer;
 }
-
-// tr:nth-child(even){background-color: $row-bg};
 
 img {
   width:30px;

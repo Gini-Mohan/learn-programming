@@ -12,11 +12,9 @@ export class CourseDetailsComponent implements OnInit {
   public autoCompleteList: Course[];  
   booleanValue: boolean = false;
 
-  constructor() { }
-
   ngOnInit() {
   }
-  
+
   sort(colName, boolean) {
     if (boolean == true){
       this.courseDetails.sort((a, b) => a[colName] < b[colName] ? 1 : a[colName] > b[colName] ? -1 : 0)
@@ -27,5 +25,15 @@ export class CourseDetailsComponent implements OnInit {
       this.booleanValue = !this.booleanValue
   }
   }
+
+  addNewItem(course: Course){    
+    // save the properties if not exists
+    this.courseDetails.find(x => x.name === course.name).saved = true;
+ }
+
+ removeItem(course: Course){    
+  // save the properties if not exists
+  this.courseDetails.find(x => x.name === course.name).saved = false;
+}
 
 }

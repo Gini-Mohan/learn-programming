@@ -6,7 +6,7 @@
         <th>Author</th>
         <th (click)="sort('publishDate', booleanValue)">PublishDate</th>  
         <th (click)="sort('duration', booleanValue)">Duration</th>   
-        <th>Image</th>
+        <th>Image</th>        
       </tr>
       <ng-container *ngIf="courseDetails" >
       <tr *ngFor="let course of courseDetails" >     

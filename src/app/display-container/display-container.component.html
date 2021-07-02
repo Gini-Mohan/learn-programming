@@ -1,2 +1,9 @@
-<p>display-container works!</p>
-<app-course-details [courseDetails]="courseDetails"></app-course-details>
+
+<div class="toolbar" role="banner">  
+    <div class="header">Happy Learning</div>
+      <div class="spacer">
+        <input type="text" class="form-control" (input)="onSearchChange($event.target.value)">
+    </div> 
+  </div>
+  
+<app-course-details [courseDetails]="courseDetails" *ngIf="propertyDetails$ | async"></app-course-details>

@@ -12,6 +12,13 @@ Run `npm install -g json-server` to install json-server
     Navigate to `http://localhost:3000/` to check the json-server is running
     Navigate to `http://localhost:3000/lessons` to check the results
 
+## Display courses 
+ 1. Created modules for all the components - can implement lazy-loading
+ 2. Created course-details components to display the course details - can resuse it in future to display.
+ 3. Created display-container - It calls the service get the details and pass to course-detail component as the Input
+ 4. Clicking the headers(duration and date) will sort the table in ascending and descending order.
+ 5. Hover over the table data will show the button (add/delete) -Add button -if the details is not already added in the cart.
+ 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
