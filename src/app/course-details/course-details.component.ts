@@ -8,9 +8,24 @@ import { Course } from '../model/course.model';
 })
 export class CourseDetailsComponent implements OnInit {
   @Input() public courseDetails: Course[];
+  
+  public autoCompleteList: Course[];  
+  booleanValue: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+  
+  sort(colName, boolean) {
+    if (boolean == true){
+      this.courseDetails.sort((a, b) => a[colName] < b[colName] ? 1 : a[colName] > b[colName] ? -1 : 0)
+      this.booleanValue = !this.booleanValue
+  }
+  else{
+      this.courseDetails.sort((a, b) => a[colName] > b[colName] ? 1 : a[colName] < b[colName] ? -1 : 0)
+      this.booleanValue = !this.booleanValue
+  }
   }
 
 }

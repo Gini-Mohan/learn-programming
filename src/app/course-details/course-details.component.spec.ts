@@ -70,4 +70,62 @@ describe('CourseDetailsComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();    
   });
+
+  it('should sort based on the duration', () => {
+    let details1: Course[] = [];
+    let course2 = {
+      name: "React - basics",
+      description: "This course is going to take you through basics of React.",
+      author: "James White",
+      publishDate: "12/03/2019",
+      duration: "00:03:56",
+      image : "https://cdn.auth0.com/blog/react-js/react.png",
+      saved:true
+    }
+    let course1 = {
+      name: "Vue - learn vue in an hour",
+      description: "This course teaches you how to build a vue application in an hour.",
+      author: "Michael Brown",
+      publishDate: "17/10/2019",
+      duration: "00:00:59",
+      image: "https://vuejs.org/images/logo.png",
+      saved:true
+    }
+    details1.push(course1);
+    details1.push(course2);
+    component.courseDetails = details1;
+    fixture.detectChanges();
+    expect(component).toBeTruthy(); 
+    component.sort("duration", true);
+    expect(component.courseDetails[0].author).toBe('James White'); 
+  });
+
+  it('should sort based on the duration -ascending', () => {
+    let details1: Course[] = [];
+    let course2 = {
+      name: "React - basics",
+      description: "This course is going to take you through basics of React.",
+      author: "James White",
+      publishDate: "12/03/2019",
+      duration: "00:03:56",
+      image : "https://cdn.auth0.com/blog/react-js/react.png",
+      saved:true
+    }
+    let course1 = {
+      name: "Vue - learn vue in an hour",
+      description: "This course teaches you how to build a vue application in an hour.",
+      author: "Michael Brown",
+      publishDate: "17/10/2019",
+      duration: "00:00:59",
+      image: "https://vuejs.org/images/logo.png",
+      saved:true
+    }
+    details1.push(course1);
+    details1.push(course2);
+    component.courseDetails = details1;
+    fixture.detectChanges();
+    expect(component).toBeTruthy(); 
+    component.sort("duration", false);
+    expect(component.courseDetails[0].author).toBe('Michael Brown'); 
+  });
 });

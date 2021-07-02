@@ -4,8 +4,8 @@
         <th>Name</th>
         <th>Description</th>
         <th>Author</th>
-        <th>PublishDate</th>  
-        <th>Duration</th>   
+        <th (click)="sort('publishDate', booleanValue)">PublishDate</th>  
+        <th (click)="sort('duration', booleanValue)">Duration</th>   
         <th>Image</th>
       </tr>
       <ng-container *ngIf="courseDetails" >
