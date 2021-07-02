@@ -8,8 +8,7 @@ import { Course } from 'src/app/model/course.model';
   providedIn: 'root'
 })
 export class CourseApiService {
-
-  private apiBaseURL = 'http://localhost:3000';  
+  private apiBaseURL = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +17,6 @@ export class CourseApiService {
     let errorMsg: string;
     return this.httpClient.get<Course[]>(`${this.apiBaseURL}/lessons`)
     .pipe(
-
       catchError(error => {
           if (error.error instanceof ErrorEvent) {
               errorMsg = `Error: ${error.error.message}`;
